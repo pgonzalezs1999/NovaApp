@@ -47,7 +47,7 @@ class TarjetaTransferencia extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Text(nuevoPrecio, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    Text("\$" + nuevoPrecio, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),

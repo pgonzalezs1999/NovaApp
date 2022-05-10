@@ -64,6 +64,7 @@ flutter:
   assets:
     - assets/images/BTC.png
     - assets/images/ETH.png
+    - assets/images/USDT.png
     - assets/images/youp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

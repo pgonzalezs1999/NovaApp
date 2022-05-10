@@ -25,37 +25,52 @@ class PantallaTodosMovimientosState extends State<PantallaTodosMovimientos> {
           width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.075,
               right: MediaQuery.of(context).size.width * 0.075,
-              bottom: MediaQuery.of(context).size.height * 0.01),
+              top: MediaQuery.of(context).size.height * 0.06,
+              bottom: MediaQuery.of(context).size.height * 0.02),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("TODOS LOS MOVIMIENTOS", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
               Container(
+                margin: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.025),
                 child: FondoGrupo(
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("TODOS LOS CONTACTOS", style: TextStyle(color: Colors.white, fontSize: 12)),
-                          GestureDetector(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
-                              child: Icon(Icons.add_outlined, color: Colors.white),
-                            ),
-                            onTap: () {
-                              //Navigator.pop(context);
-                            },
-                          ),
-                        ],
+                      Container(
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01,
+                            bottom: MediaQuery.of(context).size.height * 0.005),
+                        child: Text("HOY"),
                       ),
                       TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
-                      TarjetaContacto("ÁLVARO FARRENY", "farrenyalvaro@gmail.com", Image.asset("assets/images/youp.png", width: 40)),
-                      TarjetaContacto("ANDRÉS PÉREZ", "loquesea@gmail.com", Image.asset("assets/images/youp.png", width: 40)),
-                      TarjetaContacto("PABLO GONZÁLEZ", "pgonzalezs1999@gmail.com", Image.asset("assets/images/youp.png", width: 40)),
-                      TarjetaContacto("ÁLVARO FARRENY", "farrenyalvaro@gmail.com", Image.asset("assets/images/youp.png", width: 40)),
-                      TarjetaContacto("ANDRÉS PÉREZ", "loquesea@gmail.com", Image.asset("assets/images/youp.png", width: 40)),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      Container(
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,
+                            bottom: MediaQuery.of(context).size.height * 0.005),
+                        child: Text("AYER"),
+                      ),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      Container(
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,
+                            bottom: MediaQuery.of(context).size.height * 0.005),
+                        child: Text("10/12/2022"),
+                      ),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      Container(
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,
+                            bottom: MediaQuery.of(context).size.height * 0.005),
+                        child: Text("07/12/2022"),
+                      ),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      Container(
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,
+                            bottom: MediaQuery.of(context).size.height * 0.005),
+                        child: Text("02/12/2022"),
+                      ),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
+                      TarjetaTransferencia(PantallaTodosMovimientos(), "Uber", "12/12/2012", "12:34", "29.99", Image.asset("assets/images/youp.png", width: 50)),
                     ],
                   ),
                 ),
