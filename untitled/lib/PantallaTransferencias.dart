@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
+import 'package:flutter_prueba/PantallaTodosMovimientos.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaContacto.dart';
 
 class PantallaTransferencias extends StatefulWidget {
@@ -18,45 +19,55 @@ class PantallaTransferenciasState extends State<PantallaTransferencias> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.075,
-            right: MediaQuery.of(context).size.width * 0.075),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("TRANSFERENCIAS", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-            Align(
-              alignment: Alignment.center,
-              child: Text("\$ 98,271.00", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-            Text("MI CUENTA: 1231230120301", style: TextStyle(color: Colors.white, fontSize: 12)),
-            Container(
-              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025,
-                  bottom: MediaQuery.of(context).size.height * 0.025),
-              child: FondoGrupo(
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Enviar dinero a", style: TextStyle(color: Color(0xBBFFFFFF))),
-                    TextField(
-                      autofocus: false,
-                      style: TextStyle(color: Color(0x77FFFFFF), fontSize: 14),
-                      decoration: InputDecoration(
-                        hintStyle: TextStyle(color: Colors.white.withOpacity(0.4)),
-                        fillColor: Colors.white,
-                        hintText: 'Dirección de cartera o nombre del contacto',
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(
+          child: Container(
+          width: MediaQuery.of(context).size.width,
+          margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.075,
+              right: MediaQuery.of(context).size.width * 0.075,
+              bottom: MediaQuery.of(context).size.height * 0.01),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("TRANSFERENCIAS", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                  GestureDetector(
+                    child: Icon(Icons.more_vert_outlined, color: Colors.white, size: 30),
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              Align(
+                alignment: Alignment.center,
+                child: Text("\$ 98,271.00", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              Text("MI CUENTA: 1231230120301", style: TextStyle(color: Colors.white, fontSize: 12)),
+              Container(
+                margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025,
+                    bottom: MediaQuery.of(context).size.height * 0.025),
+                child: FondoGrupo(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Enviar dinero a", style: TextStyle(color: Color(0xBBFFFFFF))),
+                      TextField(
+                        autofocus: false,
+                        style: TextStyle(color: Color(0x77FFFFFF), fontSize: 14),
+                        decoration: InputDecoration(
+                          hintStyle: TextStyle(color: Colors.white.withOpacity(0.4)),
+                          fillColor: Colors.white,
+                          hintText: 'Dirección de cartera o nombre del contacto',
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.35,
-              child: SingleChildScrollView(
+              Container(
                 child: FondoGrupo(
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,8 +97,8 @@ class PantallaTransferenciasState extends State<PantallaTransferencias> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

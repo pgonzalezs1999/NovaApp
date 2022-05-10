@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_prueba/Dashboard.dart';
 import 'package:flutter_prueba/PantallaRegistro.dart';
+import 'package:flutter_prueba/Prefabs/FondoLog.dart';
 
 class PantallaLogin extends StatefulWidget {
   const PantallaLogin({Key? key}) : super(key: key);
@@ -15,8 +16,8 @@ class PantallaLoginState extends State<PantallaLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       body: Container(
-        color: Color(0xFF0D47A1),
         padding:
           EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.08) +
           EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.08) +
@@ -30,55 +31,8 @@ class PantallaLoginState extends State<PantallaLogin> {
                 width: MediaQuery.of(context).size.width * 0.4,
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
-              decoration: BoxDecoration(
-                color: Color(0x44E3F2FD),
-                borderRadius:  BorderRadius.circular(15),
-              ),
-              child: TextField(
-                autofocus: false,
-                style: TextStyle(color: Color(0x77FFFFFF)),
-                decoration: InputDecoration(
-                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                  fillColor: Colors.white,
-                  hintText: 'Email',
-                  prefixIcon: Icon(
-                    Icons.mail_outline,
-                    color: Color(0x77FFFFFF),
-                  ),
-                  border: InputBorder.none,
-                  contentPadding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
-                    EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
-              decoration: BoxDecoration(
-                color: Color(0x44E3F2FD),
-                borderRadius:  BorderRadius.circular(15),
-              ),
-              child: TextField(
-                autofocus: false,
-                style: TextStyle(color: Color(0x77FFFFFF)),
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                  fillColor: Colors.white,
-                  hintText: 'Contraseña',
-                  prefixIcon: Icon(
-                    Icons.security_outlined,
-                    color: Color(0x77FFFFFF),
-                  ),
-                  border: InputBorder.none,
-                  contentPadding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
-                    EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
-                ),
-              ),
-            ),
+            FondoLog("Email", false, Icon(Icons.email_outlined, color: Color(0x66FFFFFF))),
+            FondoLog("Contraseña", true, Icon(Icons.security_outlined, color: Color(0x66FFFFFF))),
             Container(
               margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.005),
               width: MediaQuery.of(context).size.height * 0.2,

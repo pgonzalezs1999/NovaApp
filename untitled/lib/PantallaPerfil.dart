@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
+import 'package:flutter_prueba/Prefabs/BotonConIcono.dart';
 
 class PantallaPerfil extends StatelessWidget {
   const PantallaPerfil({Key? key}) : super(key: key);
@@ -8,7 +9,7 @@ class PantallaPerfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1,
+        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05,
           left: MediaQuery.of(context).size.width * 0.05,
           right: MediaQuery.of(context).size.width * 0.05),
         child: Column(
@@ -66,7 +67,7 @@ class PantallaPerfil extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("123-123333-2212-312", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                      child: Text("123-123333-2212-312", style: TextStyle(color: Colors.white, fontSize: 20)),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -83,6 +84,7 @@ class PantallaPerfil extends StatelessWidget {
                           },
                           child: const Text('Retirar'),
                         ),
+                        //BotonConIcono(Icon(Icons.north_east_outlined), "Depositar"),
                       ],
                     ),
                   ],

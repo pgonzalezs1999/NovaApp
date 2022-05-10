@@ -11,7 +11,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class DashboardState extends State<Dashboard> {
-  int _numNav = 1;
+  int _numNav = 0;
   static const List<Widget> _listaPantallas = <Widget>[
     PantallaMain(),
     PantallaTransferencias(),
@@ -25,41 +25,24 @@ class DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
-        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
+        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.06),
         child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05,
-                bottom: MediaQuery.of(context).size.height * 0.015),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: Image.asset("assets/images/youp.png", width: 50),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const PantallaPerfil()),
-                    );
-                  },
+            children: [
+              Expanded(
+                child: Container(
+                  child: _listaPantallas.elementAt(_numNav),
                 ),
               ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.68,
-              child: _listaPantallas.elementAt(_numNav),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
       bottomNavigationBar: Container(
         margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.25,
           right: MediaQuery.of(context).size.width * 0.25,
-          bottom: MediaQuery.of(context).size.height * 0.03,
-          top: MediaQuery.of(context).size.height * 0.03),
+          bottom: MediaQuery.of(context).size.height * 0.025,
+          top: MediaQuery.of(context).size.height * 0.025),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: BottomNavigationBar(
