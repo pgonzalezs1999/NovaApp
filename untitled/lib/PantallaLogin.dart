@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_prueba/Dashboard.dart';
+import 'package:flutter_prueba/PantallaPoliticasPrivacidad.dart';
 import 'package:flutter_prueba/PantallaRegistro.dart';
 import 'package:flutter_prueba/Prefabs/FondoLog.dart';
 
@@ -81,11 +82,21 @@ class PantallaLoginState extends State<PantallaLogin> {
         height: MediaQuery.of(context).size.height * 0.075,
         width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.all(0),
-        child: Text(
-          "Nova (C) - Políticas de privacidad",
-          style: TextStyle(
-            color: Colors.white,
+        child: GestureDetector(
+          child: Text(
+            "Nova (C) - Políticas de privacidad",
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const PantallaPoliticasPrivacidad()
+              ),
+            );
+          }
         ),
       ),
     );

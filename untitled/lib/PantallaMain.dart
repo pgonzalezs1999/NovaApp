@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_prueba/PantallaPerfil.dart';
 import 'package:flutter_prueba/PantallaPortfolio.dart';
 import 'package:flutter_prueba/PantallaTodosMovimientos.dart';
+import 'package:flutter_prueba/PantallaDetalleTransaccion.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaTransferencia.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaFeatures.dart';
@@ -132,9 +133,9 @@ class PantallaMainState extends State<PantallaMain> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("HOY", style: TextStyle(fontSize: 12)),
-                        TarjetaTransferencia(PantallaPerfil(), "Uber", "09/05/2022", "13:35", "23.95", Image.asset("assets/images/youp.png", width: 50)),
-                        TarjetaTransferencia(PantallaPerfil(), "Telepizza", "08/05/2022", "01:31", "18.90", Image.asset("assets/images/youp.png", width: 50)),
-                        TarjetaTransferencia(PantallaPerfil(), "Movistar", "08/05/2022", "00:00", "23.95", Image.asset("assets/images/youp.png", width: 50)),
+                        TarjetaTransferencia(PantallaDetalleTransaccion(), "Uber", "09/05/2022", "13:35", "23.95", Image.asset("assets/images/youp.png", width: 50)),
+                        TarjetaTransferencia(PantallaDetalleTransaccion(), "Telepizza", "08/05/2022", "01:31", "18.90", Image.asset("assets/images/youp.png", width: 50)),
+                        TarjetaTransferencia(PantallaDetalleTransaccion(), "Movistar", "08/05/2022", "00:00", "23.95", Image.asset("assets/images/youp.png", width: 50)),
                         Container(
                           margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01),
                           child: Align(
