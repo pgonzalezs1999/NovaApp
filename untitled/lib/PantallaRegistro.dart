@@ -3,6 +3,7 @@ import 'package:flutter_prueba/Dashboard.dart';
 import 'package:flutter_prueba/PantallaLogin.dart';
 import 'package:flutter_prueba/PantallaPoliticasPrivacidad.dart';
 import 'package:flutter_prueba/Prefabs/FondoLog.dart';
+import 'package:flutter_prueba/Prefabs/PantallaRegistradoCorrectamente.dart';
 
 class PantallaRegistro extends StatefulWidget {
   const PantallaRegistro({Key? key}) : super(key: key);
@@ -50,7 +51,9 @@ class PantallaRegistroState extends State<PantallaRegistro> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Dashboard()),
+                    MaterialPageRoute(
+                        builder: (context) => const PantallaRegistradoCorrectamente()
+                    ),
                   );
                 },
               ),

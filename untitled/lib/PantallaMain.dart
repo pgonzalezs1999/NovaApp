@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/PantallaOpcionesDepositar.dart';
 import 'package:flutter_prueba/PantallaPerfil.dart';
 import 'package:flutter_prueba/PantallaPortfolio.dart';
 import 'package:flutter_prueba/PantallaTodosMovimientos.dart';
@@ -115,7 +116,7 @@ class PantallaMainState extends State<PantallaMain> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly
                   ,
                   children: [
-                    TarjetaFeatures(Icon(Icons.save_alt_outlined, size: 30), "Depositar", PantallaPerfil()),
+                    TarjetaFeatures(Icon(Icons.save_alt_outlined, size: 30), "Depositar", PantallaOpcionesDepositar()),
                     TarjetaFeatures(Icon(Icons.upload_outlined, size: 30), "Enviar", PantallaPerfil()),
                     //TarjetaFeatures(Icon(Icons.send_outlined, size: 30), "Transferir", PantallaPerfil()),
                   ],
