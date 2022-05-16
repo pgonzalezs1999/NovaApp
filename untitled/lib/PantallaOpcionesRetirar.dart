@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/PantallaRetirarPrimera.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/BotonConIcono.dart';
 
-class PantallaOpcionesEnviar extends StatelessWidget {
-  const PantallaOpcionesEnviar({Key? key}) : super(key: key);
+class PantallaOpcionesRetirar extends StatelessWidget {
+  const PantallaOpcionesRetirar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +58,12 @@ class PantallaOpcionesEnviar extends StatelessWidget {
                           ],
                         ),
                       ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PantallaRetirarPrimera()),
+                        );
+                      },
                     ),
                   ],
                 ),

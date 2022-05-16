@@ -3,7 +3,7 @@ import 'package:flutter_prueba/Dashboard.dart';
 import 'package:flutter_prueba/PantallaLogin.dart';
 import 'package:flutter_prueba/PantallaPoliticasPrivacidad.dart';
 import 'package:flutter_prueba/Prefabs/FondoLog.dart';
-import 'package:flutter_prueba/Prefabs/PantallaRegistradoCorrectamente.dart';
+import 'package:flutter_prueba/PantallaRegistradoCorrectamente.dart';
 
 class PantallaRegistro extends StatefulWidget {
   const PantallaRegistro({Key? key}) : super(key: key);

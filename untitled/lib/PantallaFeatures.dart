@@ -18,16 +18,16 @@ class PantallaFeatures extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TarjetaFeatures(const Icon(Icons.details_outlined, size: 30), "Buy criptos", PantallaCriptos()),
-                TarjetaFeatures(const Icon(Icons.settings_ethernet_outlined, size: 30), "Set Limits", PantallaLogin()),
-                TarjetaFeatures(const Icon(Icons.https_outlined, size: 30), "Block Card", PantallaLogin()),
+                //TarjetaFeatures(const Icon(Icons.settings_ethernet_outlined, size: 30), "Set Limits", PantallaLogin()),
+                //TarjetaFeatures(const Icon(Icons.https_outlined, size: 30), "Block Card", PantallaLogin()),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                TarjetaFeatures(const Icon(Icons.import_export_outlined, size: 30), "Transfer", PantallaLogin()),
-                TarjetaFeatures(const Icon(Icons.save_alt_outlined, size: 30), "Withdraw", PantallaLogin()),
-                TarjetaFeatures(const Icon(Icons.account_balance_outlined, size: 30), "Load Funds", PantallaLogin()),
+                //TarjetaFeatures(const Icon(Icons.import_export_outlined, size: 30), "Transfer", PantallaLogin()),
+                //TarjetaFeatures(const Icon(Icons.save_alt_outlined, size: 30), "Withdraw", PantallaLogin()),
+                //TarjetaFeatures(const Icon(Icons.account_balance_outlined, size: 30), "Load Funds", PantallaLogin()),
               ],
             ),
           ],

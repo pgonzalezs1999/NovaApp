@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/PantallaRetirarSegunda.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/PantallaDepositarSegunda.dart';
 import 'package:flutter_prueba/Prefabs/BotonConIcono.dart';
 
-class PantallaDepositarPrimera extends StatelessWidget {
-  const PantallaDepositarPrimera({Key? key}) : super(key: key);
+class PantallaRetirarPrimera extends StatelessWidget {
+  const PantallaRetirarPrimera({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class PantallaDepositarPrimera extends StatelessWidget {
               margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
               child: Align(
                 alignment: Alignment.center,
-                child: Text("DEPÓSITO COP", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                child: Text("RETIRO COP", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
               ),
             ),
             Container(
@@ -43,15 +44,26 @@ class PantallaDepositarPrimera extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.account_balance_outlined),
-                        Text("Depósito bancario"),
+                        Text("Retiro por transacción bancario"),
                       ],
                     ),
                     Container(
                       margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025,
-                          bottom: MediaQuery.of(context).size.height * 0.02),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset("assets/images/COP.png", width: 50),
+                        bottom: MediaQuery.of(context).size.height * 0.02),
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Image.asset("assets/images/USDT.png", width: 50),
+                          ),
+                          Icon(Icons.compare_arrows_outlined, size: 50, color: Color(0xAAFFFFFF)),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Image.asset("assets/images/COP.png", width: 50),
+                          ),
+                        ],
                       ),
                     ),
                     TextField(
@@ -69,14 +81,14 @@ class PantallaDepositarPrimera extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01,
                           bottom: MediaQuery.of(context).size.height * 0.025),
-                      child: Text("10 USDT"),
+                      child: Text("Disponible: 3,00.30 USDT"),
                     ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const PantallaDepositarSegunda()
+                              builder: (context) => const PantallaRetirarSegunda()
                           ),
                         );
                       },
