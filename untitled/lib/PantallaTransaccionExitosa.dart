@@ -1,0 +1,57 @@
+import 'package:flutter/cupertino.dart';
+import "package:flutter/material.dart";
+import 'package:flutter_prueba/PantallaLogin.dart';
+
+class PantallaTransaccionExitosa extends StatelessWidget {
+  const PantallaTransaccionExitosa({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.075),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.05),
+              child: Icon(Icons.celebration, size: MediaQuery.of(context).size.width * 0.5),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.01),
+              child: Text("¡Transacción completada!", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Color(0xCC33CCFF)),
+                textAlign: TextAlign.center),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.01),
+              child: Text("\$2.02", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.01),
+              child: Text(
+                "La transacción se ha completado correctamente",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.15),
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: ElevatedButton(
+                child: Text("Continuar"),
+                onPressed: () {
+                  for(int i=0; i<2; i++)
+                  {
+                    Navigator.pop(context);
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

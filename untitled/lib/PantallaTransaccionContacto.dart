@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_prueba/PantallaDepositoExitoso.dart';
 import 'package:flutter_prueba/PantallaDepositoFallido.dart';
 import 'package:flutter_prueba/PantallaPoliticasPrivacidad.dart';
+import 'package:flutter_prueba/PantallaTransaccionExitosa.dart';
+import 'package:flutter_prueba/PantallaTransaccionFallida.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/GrupoDeposito.dart';
 
@@ -31,7 +33,7 @@ class PantallaTransaccionContacto extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.025),
+              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.05),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -71,6 +73,32 @@ class PantallaTransaccionContacto extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,
+                  bottom: MediaQuery.of(context).size.height * 0.015),
+              padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.05),
+              decoration: BoxDecoration(
+                color: Color(0x28FFFFFF),
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x22000000),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: TextField(
+                autofocus: false,
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  hintText: "Añadir concepto (opcional)",
+                  hintStyle: TextStyle(color: Color(0x77FFFFFF)),
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -80,7 +108,7 @@ class PantallaTransaccionContacto extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PantallaDepositoExitoso()
+                            builder: (context) => const PantallaTransaccionExitosa()
                         ),
                       );
                     },
@@ -93,7 +121,7 @@ class PantallaTransaccionContacto extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PantallaDepositoFallido()
+                            builder: (context) => const PantallaTransaccionFallida()
                         ),
                       );
                     },

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter_prueba/PantallaNuevoContacto.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/PantallaTodosMovimientos.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaContacto.dart';
@@ -12,6 +13,8 @@ class PantallaTransferencias extends StatefulWidget {
 }
 
 class PantallaTransferenciasState extends State<PantallaTransferencias> {
+  List<String> choices = <String>["BTC", "ETH", "USDT", "COP"];
+  int _select = 1;
   void Anadir() {
     print("Hola");
   }
@@ -33,9 +36,17 @@ class PantallaTransferenciasState extends State<PantallaTransferencias> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("TRANSFERENCIAS", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-                  GestureDetector(
-                    child: Icon(Icons.more_vert_outlined, color: Colors.white, size: 30),
-                    onTap: () {},
+                  PopupMenuButton(
+                    itemBuilder: (context) => [
+                      PopupMenuItem(
+                        child: Text("Cuenta personal", style: TextStyle(color: Colors.black)),
+                        value: 1,
+                      ),
+                      PopupMenuItem(
+                        child: Text("Cuenta de empresa", style: TextStyle(color: Colors.black)),
+                        value: 2,
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -82,7 +93,10 @@ class PantallaTransferenciasState extends State<PantallaTransferencias> {
                               child: Icon(Icons.add_outlined, color: Colors.white),
                             ),
                             onTap: () {
-                              //Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => PantallaNuevoContacto()),
+                              );
                             },
                           ),
                         ],
