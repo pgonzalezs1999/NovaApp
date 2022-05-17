@@ -122,7 +122,8 @@ class PantallaPerfil extends StatelessWidget {
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
-                  Navigator.popUntil(context,ModalRoute.withName('/'));
+                    Navigator.pop(context);
+                    Navigator.pop(context);
                 },
                 child: Text("Cerrar sesión"),
                 style: TextButton.styleFrom(

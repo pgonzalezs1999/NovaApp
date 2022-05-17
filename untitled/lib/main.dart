@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_prueba/PantallaLogIn.dart';
+import 'package:flutter_prueba/PantallaSplash.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -42,6 +42,6 @@ void main() {
         color: Color(0xAAFFFFFF),
       ),
     ),
-    home: PantallaLogin(),
+    home: PantallaSplash(),
   ));
 }

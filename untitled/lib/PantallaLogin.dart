@@ -11,8 +11,16 @@ class PantallaLogin extends StatefulWidget {
 }
 
 class PantallaLoginState extends State<PantallaLogin> {
-  void Anadir() {
-    print("Hola");
+  String user = "pablo";
+  String pass = "123";
+  String userEscrito = "";
+  String passEscrita = "";
+  String aviso = "";
+  void initState()
+  {
+    setState(() {
+      aviso = "";
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -32,8 +40,53 @@ class PantallaLoginState extends State<PantallaLogin> {
                 width: MediaQuery.of(context).size.width * 0.4,
               ),
             ),
-            FondoLog("Email", false, Icon(Icons.email_outlined, color: Color(0x66FFFFFF))),
-            FondoLog("Contraseña", true, Icon(Icons.security_outlined, color: Color(0x66FFFFFF))),
+            Container(
+              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
+              decoration: BoxDecoration(
+                color: Color(0x44E3F2FD),
+                borderRadius:  BorderRadius.circular(15),
+              ),
+              child: TextField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    hintText: "Email",
+                    hintStyle: TextStyle(color: Color(0x66FFFFFF)),
+                    prefixIcon: Icon(Icons.email_outlined, color: Color(0x66FFFFFF)),
+                    border: InputBorder.none,
+                    contentPadding:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
+                        EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
+                ),
+                onChanged: (text) {
+                  userEscrito = text;
+                },
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
+              decoration: BoxDecoration(
+                color: Color(0x44E3F2FD),
+                borderRadius:  BorderRadius.circular(15),
+              ),
+              child: TextField(
+                autofocus: false,
+                obscureText: true,
+                decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    hintText: "Contraseña",
+                    hintStyle: TextStyle(color: Color(0x66FFFFFF)),
+                    prefixIcon: Icon(Icons.security_outlined, color: Color(0x66FFFFFF)),
+                    border: InputBorder.none,
+                    contentPadding:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
+                        EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
+                ),
+                onChanged: (text) {
+                  passEscrita = text;
+                },
+              ),
+            ),
             Container(
               margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.005),
               width: MediaQuery.of(context).size.height * 0.2,
@@ -45,11 +98,20 @@ class PantallaLoginState extends State<PantallaLogin> {
                   ),
                 ),
                 onPressed: () {
-                  FocusScope.of(context).unfocus(); // Que no abra el teclado al volver al login
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Dashboard()),
-                  );
+                  if(user == userEscrito && pass == passEscrita)
+                  {
+                    FocusScope.of(context).unfocus(); // Que no abra el teclado al volver al login
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Dashboard()),
+                    );
+                  }
+                  else
+                  {
+                    setState(() {
+                      aviso = "Usuario o contraseña incorrectos";
+                    });
+                  }
                 },
               ),
             ),
@@ -73,6 +135,7 @@ class PantallaLoginState extends State<PantallaLogin> {
                 ),
               ],
             ),
+            Text(aviso, style: TextStyle(color: Colors.redAccent)),
           ],
         ),
       ),
