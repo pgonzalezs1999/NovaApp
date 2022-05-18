@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
+import 'package:flutter_prueba/GestionSlidesInicio.dart';
 import 'package:flutter_prueba/PantallaLogin.dart';
+import 'package:flutter_prueba/PantallaSlideInicio1.dart';
 
 class PantallaInicio1 extends StatefulWidget {
   const PantallaInicio1({Key? key}) : super(key: key);
@@ -35,7 +37,7 @@ class PantallaInicio1State extends State<PantallaInicio1> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PantallaLogin()),
+              MaterialPageRoute(builder: (context) => GestionSlidesInicio()),
             );
           },
         )

@@ -148,11 +148,11 @@ class PantallaConvertirState extends State<PantallaConvertir> {
                     ),
                     GestureDetector(
                       child: Container(
-                        margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.04),
-                        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.04),
+                        margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.045),
+                        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.045),
                         decoration: BoxDecoration(
                           color: Color(0xFF1199FF),
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(50),
                         ),
                         child: Icon(Icons.compare_arrows_outlined, size: 25),
                       ),

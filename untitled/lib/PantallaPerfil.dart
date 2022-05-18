@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/BotonConIcono.dart';
+import 'package:flutter_prueba/main.dart';
 
-class PantallaPerfil extends StatelessWidget {
+class PantallaPerfil extends StatefulWidget {
   const PantallaPerfil({Key? key}) : super(key: key);
+  @override
+  State<StatefulWidget> createState() => PantallaPerfilState();
+}
 
+class PantallaPerfilState extends State<PantallaPerfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,12 +123,25 @@ class PantallaPerfil extends StatelessWidget {
                 child: const Text('Transferir entre cuentas'),
               ),
             ),
+            Row(
+              children: [
+                Text("Modo oscuro"),
+                Switch(value: nuevoCambiarTemas.themeMode == ThemeMode.dark, onChanged: (value) {
+                  nuevoCambiarTemas.toogleTheme(value);
+                  print(value);
+                  setState(() {
+                    value = !value;
+                  });
+                },
+                ),
+              ],
+            ),
             Align(
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.pop(context);
+                  Navigator.pop(context);
+                  Navigator.pop(context);
                 },
                 child: Text("Cerrar sesión"),
                 style: TextButton.styleFrom(
