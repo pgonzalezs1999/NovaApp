@@ -42,7 +42,8 @@ ThemeData modoNegro = ThemeData(
       elevation: MaterialStateProperty.all(4),
       shadowColor: MaterialStateProperty.all<Color>(Colors.black),
       textStyle: MaterialStateProperty.resolveWith<TextStyle>((states) => TextStyle(
-          fontWeight: FontWeight.bold),
+          fontWeight: FontWeight.bold,
+        ),
       ),
     ),
   ),

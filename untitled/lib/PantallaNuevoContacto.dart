@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/Prefabs/FlechaVolver.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/FondoLog.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaCripto.dart';
@@ -25,17 +26,7 @@ class PantallaNuevoContactoState extends State<PantallaNuevoContacto> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              child: GestureDetector(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Icon(Icons.arrow_back_outlined, color: Colors.white, size: 30),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
+            FlechaVolver(),
             Container(
               margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.05),
               child: Align(

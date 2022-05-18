@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/Prefabs/FlechaVolver.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaCripto.dart';
 
 class PantallaCriptos extends StatefulWidget {
@@ -8,10 +9,7 @@ class PantallaCriptos extends StatefulWidget {
 }
 
 class PantallaCriptosState extends State<PantallaCriptos> {
-  Widget customSearchBar = const Text('My Personal Journal');
-  void Anadir() {
-    print("Hola");
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +21,7 @@ class PantallaCriptosState extends State<PantallaCriptos> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.arrow_back_outlined, color: Colors.white, size: 30),
-            ),
+            FlechaVolver(),
             Text("Criptomonedas", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
             Container(
               margin: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.05,

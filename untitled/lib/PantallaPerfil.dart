@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/Prefabs/FlechaVolver.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/BotonConIcono.dart';
 import 'package:flutter_prueba/main.dart';
@@ -20,18 +21,7 @@ class PantallaPerfilState extends State<PantallaPerfil> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              padding: EdgeInsets.only(bottom: 20, right: 20, left: 10),
-              child: GestureDetector(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Icon(Icons.arrow_back_outlined, color: Colors.white, size: 30),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
+            FlechaVolver(),
             Row(
               children: [
                 Container(
@@ -126,9 +116,8 @@ class PantallaPerfilState extends State<PantallaPerfil> {
             Row(
               children: [
                 Text("Modo oscuro"),
-                Switch(value: nuevoCambiarTemas.themeMode == ThemeMode.dark, onChanged: (value) {
-                  nuevoCambiarTemas.toogleTheme(value);
-                  print(value);
+                Switch(value: instanciaTema.themeMode == ThemeMode.dark, onChanged: (value) {
+                  instanciaTema.toogleTema(value);
                   setState(() {
                     value = !value;
                   });

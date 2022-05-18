@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_prueba/PantallaConvertir.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaFeatures.dart';
-import 'package:flutter_prueba/PantallaLogin.dart';
 import 'package:flutter_prueba/PantallaCriptos.dart';
 
 class PantallaFeatures extends StatelessWidget {
@@ -30,12 +29,6 @@ class PantallaFeatures extends StatelessWidget {
                 //arjetaFeatures(const Icon(Icons.save_alt_outlined, size: 30), "Withdraw", PantallaLogin()),
                 //TarjetaFeatures(const Icon(Icons.account_balance_outlined, size: 30), "Load Funds", PantallaLogin()),
               ],
-            ),
-            Container(
-                margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
-              width: MediaQuery.of(context).size.width * 0.75,
-              child: Text("(se ve feo porque está pensado para que hallan 3 botones por fila, cuando sean más definitivos los extras lo ajusto mejor)",
-                textAlign: TextAlign.center),
             ),
           ],
         ),

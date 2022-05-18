@@ -4,6 +4,7 @@ import 'package:flutter_prueba/PantallaDepositoFallido.dart';
 import 'package:flutter_prueba/PantallaPoliticasPrivacidad.dart';
 import 'package:flutter_prueba/PantallaRetiroExitoso.dart';
 import 'package:flutter_prueba/PantallaRetiroFallido.dart';
+import 'package:flutter_prueba/Prefabs/FlechaVolver.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/GrupoDeposito.dart';
 
@@ -20,18 +21,7 @@ class PantallaRetirarSegunda extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              padding: EdgeInsets.only(bottom: 20, right: 20, left: 10),
-              child: GestureDetector(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Icon(Icons.arrow_back_outlined, color: Colors.white, size: 30),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
+            FlechaVolver(),
             Container(
               margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
               child: Align(

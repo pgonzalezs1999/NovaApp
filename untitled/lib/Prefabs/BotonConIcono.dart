@@ -16,10 +16,19 @@ class BotonConIcono extends StatelessWidget {
         color: colorFondo,
         borderRadius:  BorderRadius.circular(15),
       ),
-      child: TextButton.icon(
-        onPressed: () {},
-        icon: nuevoIcono,
-        label: Text(nuevoTexto, style: TextStyle(color: colorTexto)),
+      child: GestureDetector(
+        child: TextButton.icon(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => nuevaRuta
+              ),
+            );
+          },
+          icon: nuevoIcono,
+          label: Text(nuevoTexto, style: TextStyle(color: colorTexto)),
+        ),
       ),
     );
   }

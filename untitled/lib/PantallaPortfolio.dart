@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/PantallaOpcionesDepositar.dart';
+import 'package:flutter_prueba/PantallaOpcionesRetirar.dart';
 import 'package:flutter_prueba/PantallaPerfil.dart';
 import 'package:flutter_prueba/Prefabs/BotonConIcono.dart';
+import 'package:flutter_prueba/Prefabs/FlechaVolver.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaInversion.dart';
 
@@ -30,28 +33,15 @@ class PantallaPortfolioState extends State<PantallaPortfolio> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(Icons.arrow_back_outlined, color: Colors.white, size: 40)
-                  ),
+                  FlechaVolver(),
                   Container(
                     margin: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05,
                         bottom: MediaQuery.of(context).size.height * 0.005),
                     child: Align(
                       alignment: Alignment.centerRight,
-                      child: GestureDetector(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Image.asset("assets/images/youp.png", width: 50),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const PantallaPerfil()),
-                          );
-                        },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.asset("assets/images/youp.png", width: 50),
                       ),
                     ),
                   ),
@@ -85,12 +75,12 @@ class PantallaPortfolioState extends State<PantallaPortfolio> {
                               Container(
                                 margin: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.02,
                                     left: MediaQuery.of(context).size.width * 0.02),
-                                child: BotonConIcono(Icon(Icons.arrow_upward_outlined, color: Color(0x99FFFFFF), size: 20), "Depositar", PantallaPortfolio()),
+                                child: BotonConIcono(Icon(Icons.arrow_upward_outlined, color: Color(0x99FFFFFF), size: 20), "Depositar", PantallaOpcionesDepositar()),
                               ),
                               Container(
                                 margin: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.02,
                                     left: MediaQuery.of(context).size.width * 0.02),
-                                child: BotonConIcono(Icon(Icons.arrow_downward_outlined, color: Color(0x99FFFFFF), size: 20), "Retirar", PantallaPortfolio()),
+                                child: BotonConIcono(Icon(Icons.arrow_downward_outlined, color: Color(0x99FFFFFF), size: 20), "Retirar", PantallaOpcionesRetirar()),
                               ),
                             ],
                           ),

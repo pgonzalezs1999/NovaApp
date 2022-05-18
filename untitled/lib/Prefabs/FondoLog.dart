@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba/Configuracion/Temas.dart';
+import 'package:flutter_prueba/main.dart';
 
 class FondoLog extends StatelessWidget {
   String nuevaPista;

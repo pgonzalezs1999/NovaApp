@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_prueba/PantallaDetalleTransaccion.dart';
+import 'package:flutter_prueba/Prefabs/FlechaVolver.dart';
 import 'package:flutter_prueba/Prefabs/FondoGrupo.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaContacto.dart';
 import 'package:flutter_prueba/Prefabs/TarjetaTransferencia.dart';
@@ -31,15 +32,7 @@ class PantallaTodosMovimientosState extends State<PantallaTodosMovimientos> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GestureDetector(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.01),
-                  child: Icon(Icons.arrow_back_outlined, color: Colors.white, size: 35),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
+              FlechaVolver(),
               Text("TODOS LOS MOVIMIENTOS", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
               Container(
                 margin: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.025),
