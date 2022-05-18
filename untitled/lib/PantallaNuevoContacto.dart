@@ -182,7 +182,7 @@ class PantallaNuevoContactoState extends State<PantallaNuevoContacto> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025),
               child: Align(
                 child: ElevatedButton(
                   child: const Text('Guardar contacto'),

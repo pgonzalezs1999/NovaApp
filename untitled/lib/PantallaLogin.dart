@@ -25,118 +25,120 @@ class PantallaLoginState extends State<PantallaLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset : false,
-      body: Container(
-        padding:
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Container(
+          padding:
           EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.08) +
-          EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.08) +
-          EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.1),
-              child: Image.asset(
-                "assets/images/BTC.png",
-                width: MediaQuery.of(context).size.width * 0.4,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
-              decoration: BoxDecoration(
-                color: Color(0x44E3F2FD),
-                borderRadius:  BorderRadius.circular(15),
-              ),
-              child: TextField(
-                autofocus: false,
-                decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    hintText: "Email",
-                    hintStyle: TextStyle(color: Color(0x66FFFFFF)),
-                    prefixIcon: Icon(Icons.email_outlined, color: Color(0x66FFFFFF)),
-                    border: InputBorder.none,
-                    contentPadding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
-                        EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
+              EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.08) +
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.1),
+                child: Image.asset(
+                  "assets/images/BTC.png",
+                  width: MediaQuery.of(context).size.width * 0.4,
                 ),
-                onChanged: (text) {
-                  userEscrito = text;
-                },
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
-              decoration: BoxDecoration(
-                color: Color(0x44E3F2FD),
-                borderRadius:  BorderRadius.circular(15),
-              ),
-              child: TextField(
-                autofocus: false,
-                obscureText: true,
-                decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    hintText: "Contraseña",
-                    hintStyle: TextStyle(color: Color(0x66FFFFFF)),
-                    prefixIcon: Icon(Icons.security_outlined, color: Color(0x66FFFFFF)),
-                    border: InputBorder.none,
-                    contentPadding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
-                        EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
+              Container(
+                margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
+                decoration: BoxDecoration(
+                  color: Color(0x44E3F2FD),
+                  borderRadius:  BorderRadius.circular(15),
                 ),
-                onChanged: (text) {
-                  passEscrita = text;
-                },
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.005),
-              width: MediaQuery.of(context).size.height * 0.2,
-              child: ElevatedButton(
-                child: const Text('Acceder'),
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(15),
+                child: TextField(
+                  autofocus: false,
+                  decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      hintText: "Email",
+                      hintStyle: TextStyle(color: Color(0x66FFFFFF)),
+                      prefixIcon: Icon(Icons.email_outlined, color: Color(0x66FFFFFF)),
+                      border: InputBorder.none,
+                      contentPadding:
+                      EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
+                          EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
                   ),
+                  onChanged: (text) {
+                    userEscrito = text;
+                  },
                 ),
-                onPressed: () {
-                  if(user == userEscrito && pass == passEscrita)
-                  {
-                    FocusScope.of(context).unfocus(); // Que no abra el teclado al volver al login
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Dashboard()),
-                    );
-                  }
-                  else
-                  {
-                    setState(() {
-                      aviso = "Usuario o contraseña incorrectos";
-                    });
-                  }
-                },
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "¿No tienes cuenta?",
-                  style: TextStyle(
-                    color: Color(0xFFFFFFFF),
-                  ),
+              Container(
+                margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.03),
+                decoration: BoxDecoration(
+                  color: Color(0x44E3F2FD),
+                  borderRadius:  BorderRadius.circular(15),
                 ),
-                TextButton(
-                    onPressed: () {
+                child: TextField(
+                  autofocus: false,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      hintText: "Contraseña",
+                      hintStyle: TextStyle(color: Color(0x66FFFFFF)),
+                      prefixIcon: Icon(Icons.security_outlined, color: Color(0x66FFFFFF)),
+                      border: InputBorder.none,
+                      contentPadding:
+                      EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) +
+                          EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02)
+                  ),
+                  onChanged: (text) {
+                    passEscrita = text;
+                  },
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.005),
+                width: MediaQuery.of(context).size.height * 0.2,
+                child: ElevatedButton(
+                  child: const Text('Acceder'),
+                  style: ElevatedButton.styleFrom(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(15),
+                    ),
+                  ),
+                  onPressed: () {
+                    if(user == userEscrito && pass == passEscrita)
+                    {
+                      FocusScope.of(context).unfocus(); // Que no abra el teclado al volver al login
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const PantallaRegistro()),
+                        MaterialPageRoute(builder: (context) => const Dashboard()),
                       );
-                    },
-                    child: Text("Regístrate")
+                    }
+                    else
+                    {
+                      setState(() {
+                        aviso = "Usuario o contraseña incorrectos";
+                      });
+                    }
+                  },
                 ),
-              ],
-            ),
-            Text(aviso, style: TextStyle(color: Colors.redAccent)),
-          ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "¿No tienes cuenta?",
+                    style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const PantallaRegistro()),
+                        );
+                      },
+                      child: Text("Regístrate")
+                  ),
+                ],
+              ),
+              Text(aviso, style: TextStyle(color: Colors.redAccent)),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Container(
@@ -146,20 +148,20 @@ class PantallaLoginState extends State<PantallaLogin> {
         width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.all(0),
         child: GestureDetector(
-          child: Text(
-            "Nova (C) - Políticas de privacidad",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const PantallaPoliticasPrivacidad()
+            child: Text(
+              "Nova (C) - Políticas de privacidad",
+              style: TextStyle(
+                color: Colors.white,
               ),
-            );
-          }
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const PantallaPoliticasPrivacidad()
+                ),
+              );
+            }
         ),
       ),
     );

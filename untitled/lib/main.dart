@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_prueba/Dashboard.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_prueba/PantallaSplash.dart';
 import 'Configuracion/Temas.dart';
 import 'Configuracion/CambiarTemas.dart';
@@ -15,6 +15,20 @@ class MyApp extends StatefulWidget {
   MyAppState createState() => MyAppState();
 }
 class MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return MaterialApp(
+      title: 'Nova',
+      theme: modoBlanco,
+      darkTheme: modoNegro,
+      themeMode: instanciaTema.themeMode,
+      home: PantallaSplash(),
+    );
+  }
   @override
   void dispose() {
     instanciaTema.removeListener(themeListener);
@@ -32,15 +46,5 @@ class MyAppState extends State<MyApp> {
       });
     }
   }
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Nova',
-      theme: modoBlanco,
-      darkTheme: modoNegro,
-      themeMode: instanciaTema.themeMode,
-      //home: PantallaSplash(),
-      home: Dashboard(),
-    );
-  }
+
 }

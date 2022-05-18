@@ -6,8 +6,13 @@ ThemeData modoBlanco = ThemeData(
   iconTheme: IconThemeData(
   color: Color(0xAAFFFFFF),
   ),
+  inputDecorationTheme: InputDecorationTheme(
+    hintStyle: TextStyle(color: Color(0XCCFFFFFF)),
+    labelStyle: TextStyle(color: Color(0XCCFFFFFF)),
+  ),
   textTheme: const TextTheme(
-  bodyText2: TextStyle(color: Color(0XCCFFFFFF)),
+    bodyText2: TextStyle(color: Color(0XCCFFFFFF)),
+
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(

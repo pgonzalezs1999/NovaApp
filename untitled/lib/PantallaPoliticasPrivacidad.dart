@@ -12,10 +12,6 @@ class PantallaPoliticasPrivacidad extends StatefulWidget {
 }
 
 class PantallaPoliticasPrivacidadState extends State<PantallaPoliticasPrivacidad> {
-  void Anadir() {
-    print("Hola");
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
